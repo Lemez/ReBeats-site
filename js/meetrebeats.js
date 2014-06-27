@@ -5,7 +5,7 @@ $(document).ready(function() {
 
 	$('nav a').click(function () { 
 
-		var sectionId = '#' + $(this).attr('title');
+		var sectionId = '#' + $(this).attr('scrollto');
 
 		$('html, body').animate({ 
 

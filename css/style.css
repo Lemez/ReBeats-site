@@ -17,7 +17,7 @@ body {
 
 section {
 		background: #ecf0f1; /*clouds from flatui*/
-		border-bottom: dashed 2px white;
+		border-bottom: groove 5px white;
 }
 
 div.content {
@@ -128,6 +128,7 @@ nav a:visited {
 	background-repeat: no-repeat;
 	height: 480px;
 	padding-top: 145px;
+/*	border-bottom: none;*/
 }
 
 
