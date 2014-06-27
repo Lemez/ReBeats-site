@@ -15,6 +15,39 @@ $(document).ready(function() {
 	});
 
 
+
+//						 *********** PARALLAX SCROLL HEADER  ************
+
+		// Enable parallax scrollTop to fire
+		$(document).trigger("scroll");
+
+		$(document).on('scroll', function () {
+
+//  scrollTop is a variable that shows us how far down the page we are in pixels
+		var yAxis = $(document).scrollTop();
+		var headerClass = $('header').attr('class');
+		
+
+		// the height of the #showcase image divided by 1.5 to make the fade quicker
+		var image_height = 420/1.5;
+
+		// value to control opacity
+		var opacity = (image_height-yAxis)/image_height;
+
+		// fade the header as you scroll down
+		$('header').css("opacity", (image_height-yAxis)/image_height);
+
+		// remove header bar if opacity less than zero
+		if (opacity < 0) {
+			$('header').addClass('make-header-disappear');
+		} else {
+			$('header').removeClass('make-header-disappear');
+		}
+
+	});
+// End of Parallax
+
+
 //						 *********** MANIFESTO ACCORDION ************
 
 	$('ul li a').click(function () { 
@@ -60,59 +93,6 @@ $(document).ready(function() {
 // End of Mouseover Community
 
 
-//						 *********** MOUSEOVER TEAM ************
-
-	$('#team img').on('mouseover', function() {  
-		$(this).css("opacity", "1");
-
-		$(this).siblings("div.details")
-				.find("h3, h4, a")
-				.addClass("team-image-hover")
-				.css("opacity", "1");
-	});
-
-	$('#team img').on('mouseleave', function() {   
-
-		$(this).css("opacity", "0.5");
-
-		$(this).siblings("div.details")
-				.find("h3, h4, a")
-				.removeClass("team-image-hover")
-				.css("opacity", "0.6");
-	});
-// End of Mouseover Team
-
-//						 *********** PARALLAX SCROLL HEADER  ************
-
-		// Enable parallax scrollTop to fire
-		$(document).trigger("scroll");
-
-		$(document).on('scroll', function () {
-
-//  scrollTop is a variable that shows us how far down the page we are in pixels
-		var yAxis = $(document).scrollTop();
-		var headerClass = $('header').attr('class');
-		
-
-		// the height of the #showcase image divided by 1.5 to make the fade quicker
-		var image_height = 420/1.5;
-
-		// value to control opacity
-		var opacity = (image_height-yAxis)/image_height;
-
-		// fade the header as you scroll down
-		$('header').css("opacity", (image_height-yAxis)/image_height);
-
-		// remove header bar if opacity less than zero
-		if (opacity < 0) {
-			$('header').addClass('make-header-disappear');
-		} else {
-			$('header').removeClass('make-header-disappear');
-		}
-
-	});
-// End of Parallax
-
 //						 *********** LIGHTBOX - COMMUNITY ************
 
 	// when we click on any column in community
@@ -144,6 +124,7 @@ $(document).ready(function() {
 
 			// clean the html from previous clicks on team
 			$('.lightbox #biography').html('<p></p>').css("display", "none");
+			$('.lightbox #carousel').css("display", "none");
 			$('.lightbox #about').html('<ul></ul>').css("display", "block");
 
 			// loop through the <li> elements and add each one to the html
@@ -167,10 +148,34 @@ $(document).ready(function() {
 		});
 
 		 // then fade it out as when you click anywhere on the lightbox
-		$('.lightbox').on('click', function () {
+		$('#close a').on('click', function () {
 
 			$('.lightbox').fadeOut(250);
 	});
+// End of Lightbox Community
+
+//						 *********** MOUSEOVER TEAM ************
+
+	$('#team img').on('mouseover', function() {  
+		$(this).css("opacity", "1");
+
+		$(this).siblings("div.details")
+				.find("h3, h4, a")
+				.addClass("team-image-hover")
+				.css("opacity", "1");
+	});
+
+	$('#team img').on('mouseleave', function() {   
+
+		$(this).css("opacity", "0.5");
+
+		$(this).siblings("div.details")
+				.find("h3, h4, a")
+				.removeClass("team-image-hover")
+				.css("opacity", "0.6");
+	});
+// End of Mouseover Team
+
 
 //						 *********** LIGHTBOX - TEAM ************
 
@@ -195,23 +200,43 @@ $(document).ready(function() {
 		var biog = $(this).siblings("div").find('p').text();
 
 		// clean the html from previous clicks on team
-			$('.lightbox #biography').html('<p></p>').css("display", "block");
-			$('.lightbox #about').html('<ul></ul>').css("display", "none");
+		$('.lightbox #biography').html('<p></p>').css("display", "block");
+		$('.lightbox #about').html('<ul></ul>').css("display", "none");
+		$('.lightbox #carousel').html('').css("display", "block");
+
+		//  arrange pics on a carousel inside lightbox
+		$('div#pics img').each (function () {
+			$('.lightbox #carousel').append('<a href="#"><img src="' + $(this).attr('src') + '"/></a>');	
+		});
 
 		//  then replace the lightbox html with that of the specific image
 		$('.lightbox #pic').html(' <img src="' + image_src + '" />');
 		$('.lightbox #descriptor').html('<h3>' + name + '</h3><h4>' + job + '</h4>');
 		$('.lightbox #biography').html("<p>" + biog + "</p>");	
-
+		
 	});
 
-		 // then fade it out as when you click anywhere on the lightbox
-		$('.lightbox').on('click', function () {
+		 //  fade it out when you click to close
+	$('#close a').on('click', function () {
 
 			$('.lightbox').fadeOut(250);
+			return false;
 	});
 
 //  end of LIGHTBOX - TEAM 
+
+//						*********** MOUSEOVER TEAM IN THE LIGHTBOX ************
+
+	$('#carousel a img').on('mouseover', function() {  
+		$(this).css("opacity", "1");
+		alert("entered!");
+	});
+
+	$('#carousel a img').on('mouseleave', function() {   
+		$(this).css("opacity", "0.5");
+		alert("bye!");
+	});
+// End of Mouseover Team in the Lightbox
 
 
 
