@@ -206,7 +206,7 @@ $(document).ready(function() {
 
 		//  arrange pics on a carousel inside lightbox
 		$('div#pics img').each (function () {
-			$('.lightbox #carousel').append('<a href="#"><img src="' + $(this).attr('src') + '"/></a>');	
+			$('.lightbox #carousel').append('<img src="' + $(this).attr('src') + '"/>');	
 		});
 
 		//  then replace the lightbox html with that of the specific image
