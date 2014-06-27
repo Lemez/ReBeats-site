@@ -1,0 +1,731 @@
+/* 
+Font: PT Sans
+*/
+
+/*@import url(http://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic);
+*/
+body {
+	font-family: "PT Sans", Arial;
+	font-size: 16px;
+	line-height: 1.5;
+	color: #000000; /* black */
+	overflow: none;
+	z-index: 1;
+}
+
+							/****** GENERAL ********/
+
+section {
+		background: #ecf0f1; /*clouds from flatui*/
+		border-bottom: dashed 2px white;
+}
+
+div.content {
+	width: 960px;
+	margin: 0 auto 0 auto;
+	overflow: auto;
+}
+
+h1 {
+	float: left;
+	font-size: 31.5px; /* Values from modularscale.com */
+	font-weight: 700;
+	background-image: url("../images/rebeats-badge-small.png");
+	background-repeat: no-repeat;
+/*	background-position: left center;*/
+	background-size: 45px;
+	padding-left: 75px;
+	vertical-align: baseline;
+}
+
+
+h2 {
+	float: left;
+	font-size: 24px; /* Values from modularscale.com */
+	font-weight: 700;
+}
+
+a {
+	text-decoration: none;
+	/*color: #2980b9;  Belize Hole on Flatuicolors.com */
+}
+
+							/****** HEADER AND NAV ********/
+
+header {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: 10;
+
+	background: linear-gradient(to left, #eeeeee, white); /*light grey #eeeeee to white, see also radial-gradient*/
+	/*options like 60deg, to left, (instead to nonsense word 'bla') are optional */
+
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* adds a very fine gradient outside with a blur */
+
+	/*box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);  adds a very fine gradient inside with a blur */
+
+	padding: 10px 0 10px 30px;
+}
+
+.make-header-disappear {
+	display: none;
+}
+
+header h1 {
+	background-image: url("../images/rebeats-badge-small.png");
+	background-repeat: no-repeat;
+	background-position: left center;
+	background-size: 45px;
+	line-height: 45px;
+	padding-left: 75px;
+	text-decoration: none;
+	position: relative;
+}
+
+header h1 a {
+	color: black;
+}
+
+header h1 a:visited {
+	color: inherit;
+} 
+
+
+nav {
+	float: right;
+}
+
+nav a {
+	font-size: 16;
+	font-weight: 700;
+	text-decoration: none;
+	color: black;
+	/*color: #bdc3c7;*/ /*silver on flatui*/
+	line-height: 45px; /*puts it in line with the h1 */
+
+	margin: 0 20px 0 20px;
+}
+
+
+nav a:hover {
+	border-bottom: solid 1px black;
+	cursor: default;
+}
+
+nav a:visited {
+	text-decoration: none;
+	color: black;
+}
+
+
+							/****** SHOWCASE ********/
+
+#showcase {
+	background-image: url("../images/bg-page.jpg");
+	background-position: top center;
+	background-repeat: no-repeat;
+	height: 480px;
+	padding-top: 145px;
+}
+
+
+div.iphone {
+	float: left;
+	width: 540px; /*you could % here if you like*/
+	margin: 14px 0 0 0;
+
+	height: 466px;    /* this helps us with the animation - v precise */
+	overflow: hidden; /*any overflow get hidden*/
+	position: relative; /*z-index values need a position attached*/
+}
+
+div.text {
+	float: right;
+	width: 42.5%; /* %  or 360px out of 960px */
+
+	margin: 80px 0 0 0;
+
+	text-align: center;
+	color: white;
+/*	font-size: 36px;*/
+}
+
+div.iphone img {
+	-webkit-transition: all 0.5s 0.1s;
+	-moz-transition: all 0.5s 0.1s;
+	transition: all 0.5s 0.1s;
+}
+
+.iphone img:hover {
+	margin: 15px 0 0 0;
+}
+
+div.text h2 {
+	font-size: 47.25px;
+	font-weight: 700;
+	letter-spacing: -2px; /* the distance in between each letter */
+	text-shadow: 0 2px 2px rgba(0, 0, 0, 0.5);  /*change the see-through ALPHA of a colour using RGBA*/
+}
+
+div.text h3 {
+	margin-top: 40px;
+	font-size: 32px;
+	text-shadow: 0 2px 2px rgba(0, 0, 0, 0.5);  /*change the see-through ALPHA of a colour using RGBA*/
+}
+
+					/****** GENERAL COLUMN STYLING ********/
+
+.col {
+	float: left;
+	text-align: center;
+}
+
+.col h3 {
+	font-weight: 700;
+}
+
+					/****** COLOUR BACKGROUND FOR SECTIONS ********/
+
+#manifesto {
+	/*background: linear-gradient(to right, white, #eeeeee); light grey #eeeeee to white, see also radial-gradient*/
+	/*options like 60deg, to left, (instead to nonsense word 'bla') are optional */
+}
+
+#community {
+	/*background: linear-gradient(to right, white, #eeeeef); */
+}
+
+#team {
+	/*background: linear-gradient(to right, white, #eeeeed); */
+}
+
+/****** MANIFESTO ********/
+
+#manifesto {
+	padding: 30px 0 30px 0;
+	text-align: left;
+	text-decoration: none;
+}
+
+#manifesto h1 {
+	margin-bottom: 20px;
+	line-height: 45px;
+}
+
+#manifesto h5 {
+	line-height: 45px;
+	margin-top: 3px;
+	font-size: 20px;
+	text-indent: 2%;
+} 
+
+#manifesto ul li {
+	font-size: 30px;
+	/*margin-left: 200px;*/
+}
+
+#manifesto ul li p {
+	margin: 5px 0 5px 0;
+	font-size: 22px;
+	display: none;
+}
+
+#manifesto ul li p em {
+	font-style: italic;
+}
+
+#manifesto ul li a:hover {
+	border-bottom: dotted 1px black;
+}
+
+#manifesto ul li a:visited {
+	text-decoration: none;
+	color: inherit;
+}
+
+								/****** COMMUNITY ********/
+
+#community {
+	/*options like 60deg, to left, (instead to nonsense word 'bla') are optional */
+	padding: 30px 0 30px 0;
+	/*box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);  adds a very fine gradient outside with a blur */
+}
+
+#community .col {
+	width: 25% ; /*making it into 4 columns not 3 */
+	height: 200px;    /* this helps us with the animation - v precise */
+	text-decoration: none;
+
+	background-repeat: no-repeat;
+	background-position: 50% 20px; /*x axis then y axis*/
+
+	-webkit-transition: all 0.5s 0.1s;
+	-moz-transition: all 0.5s 0.1s;
+
+	transition: all 0.5s 0.1s;
+}
+
+#community .col:hover {
+	background-position: 50% 6px;
+	/*background-color: #ffffee;*/
+
+}
+
+#community h1 {
+	padding-bottom: 20px;
+}
+
+#community h6,
+#community ul li {
+	display: none;
+}
+
+.hidden {
+	visibility: hidden;
+}
+
+#students {
+	background-image: url(../images/student.svg);
+	background-size: 100px;
+	background-repeat: no-repeat;
+}
+
+#teachers {
+	background-image: url(../images/teacher2.svg);
+	background-size: 175px;
+	background-repeat: no-repeat;
+}
+
+#supporters {
+	background-image: url(../images/community2.svg);
+	background-size: 200px;
+	background-repeat: no-repeat;
+}
+
+#freematerials {
+	background-image: url(../images/materials.svg);
+	background-size: 100px;
+	background-repeat: no-repeat;
+}
+
+#community_labels .col {
+	width: 25%;
+	float: left;
+	height: 50px;
+}
+
+#community_labels h2 {
+	font-size: 24px;
+	font-weight: 400;
+	width: 100%;
+	/*text-indent: 25px;*/
+	text-align: center;
+}
+
+									/****** TEAM ********/
+
+#team {
+	/*options like 60deg, to left, (instead to nonsense word 'bla') are optional */
+	padding: 30px 0 30px 0;
+	/*box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);  adds a very fine gradient outside with a blur */
+}
+
+#team h1 {
+	padding-bottom: 20px;
+}
+
+/*TEAM - ISOTOPE*/
+
+div.buttons {
+	float: left;
+	padding: 0 30% 0 0;
+	width: 100%;
+}
+
+div.buttons a {
+	font-size: 20px;
+	color: black;
+	text-decoration: none;
+	margin-left: 20px;
+	opacity: 0.6;
+}
+
+div.buttons a:visited {
+	color: inherit;
+} 
+
+div.buttons a:hover {
+	opacity: 1;
+} 
+
+.team-filter-pressed {
+	border-bottom: solid black 2px;
+	opacity: 1;
+}
+
+/*END OF TEAM-ISOTOPE*/
+
+
+#team .col {
+	width: 20% ; /*making it into 5 columns not 3  - 320px*/
+	text-decoration: none;
+	/*box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.8);  check how box looks on page */
+}
+
+div.details h3, 
+div.details h4,
+div.details a {
+	color: dark gray;
+	opacity: 0.6;
+	text-decoration: none;
+	text-align: center;
+}
+
+.team-image-hover {
+	color: black;
+	opacity: 1;
+}
+
+
+#team img {
+/*	float: right;*/
+	width: 140px;
+	border-radius: 70px; /*half of the width of the image - less would round off corners*/
+	margin: 20px 20px 20px 20px;
+	opacity: 0.5;
+	cursor: pointer;
+}
+
+#team img,
+div.details h3,
+div.details h4,
+div.details a {
+
+	 -webkit-transition-duration: 0.8s;
+     -moz-transition-duration: 0.8s;
+      -ms-transition-duration: 0.8s;
+       -o-transition-duration: 0.8s;
+          transition-duration: 0.8s;
+}
+
+#team .col a,
+#team .col a:visited {
+	text-decoration: none;
+}
+
+
+#team p {
+	display: none;
+}
+
+									/****** SIGNUP ********/
+
+#newsletter {
+	clear: both;
+	overflow: auto;
+	/*background: #bdc3c7; silver from flatui*/
+	padding: 40px 0 40px 0;
+	text-align: center;
+
+}
+
+#newsletter h1 {
+	line-height: 45px;
+}
+
+#star, #message {
+	line-height: 20px;
+	font-size: 20px;
+	margin: 0 4px 0 0;
+}
+
+#newsletter p {
+	font-size: 10px;
+	padding: 10px 7px 10px 7px;
+	text-align: left;
+}
+			/* make the labels from display inline to full width  */
+
+label {
+	display: block; /* as opposed to display: inline; */
+	font-size: 21px;
+	font-weight: 700;
+}
+
+			/* use the font family in the body */
+input {
+	font-family: inherit;
+}
+
+input.email {
+	font-size: 24px;
+	padding: 5px 7px 5px 7px;
+	text-align: center;
+
+	border-radius: 10px;
+	width: 50%;
+
+}
+
+input.button {
+	background: #2ecc71; /*emerald from flatui*/
+	color: white;
+	border: none;
+
+	padding: 5px 7px 5px 7px;
+	margin: 10px;
+	font-size: 16px;
+
+	border-radius: 10px;
+	border-bottom: 2px solid #27ae60; /*nephritis on flatui*/
+
+	/*box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);*/
+
+	-webkit-appearance: none;
+	/*fix the wierdness on IOS*/
+}
+
+
+
+								/****** LIGHTBOX ********/
+
+.lightbox {
+	position: fixed;  /* not position: absolute which is fixed to the initial page load area */
+	top: 4%;
+	left: 4%;
+
+	width: 90%;
+	height: 92%;
+
+	background: rgba(255, 255, 255, 0.9);
+	border-radius: 5%;
+
+	text-align: center; /*get the image in the centre of the page*/
+
+	display: none; /* hide it by default */
+}
+
+#descriptor {
+	width: 60%;
+	left: 40%;
+	float: left;
+	line-height: 40px;
+
+	position: absolute;  /* not position: absolute which is fixed to the initial page load area */
+
+	color: black;
+	margin-top: 1%;
+/*	background: rgba(0, 0, 0, 0.2);*/
+}
+
+#descriptor h3,
+#descriptor h4 {
+	margin-top: 2%;
+	text-align: left;
+	font-size: 36px;
+	font-weight: 400;
+	color: inherit;
+	background: none;
+	display: block;
+}
+
+section.lightbox img {
+	height: 400px;
+	float: left;
+	margin: 10% 0 0 2%;
+	border-radius: 300px; 
+}
+
+#biography,
+#about {
+	width: 60%;
+	float: right;
+	margin-top: 15%;
+}
+
+#biography p,
+#about p {
+	color: black;
+	font-size: 22px;
+	text-align: left;
+	margin-right: 2%;
+}
+
+#about ul li {
+	font-size: 22px;
+	padding-bottom: 10px;
+	text-align: left;
+	margin-right: 2%;
+}
+
+#credit h6 {
+	width: 60%;
+	float: left;
+	margin-top: 25%;
+	color: black;
+}
+
+
+
+/*********** ISOTOPE ANIMATIONS *************/
+
+.isotope,
+.isotope .isotope-item {
+  /* change duration value to whatever you like */
+  -webkit-transition-duration: 0.8s;
+     -moz-transition-duration: 0.8s;
+      -ms-transition-duration: 0.8s;
+       -o-transition-duration: 0.8s;
+          transition-duration: 0.8s;
+}
+
+.isotope {
+  -webkit-transition-property: height, width;
+     -moz-transition-property: height, width;
+      -ms-transition-property: height, width;
+       -o-transition-property: height, width;
+          transition-property: height, width;
+}
+
+.isotope .isotope-item {
+  -webkit-transition-property: -webkit-transform, opacity;
+     -moz-transition-property:    -moz-transform, opacity;
+      -ms-transition-property:     -ms-transform, opacity;
+       -o-transition-property:      -o-transform, opacity;
+          transition-property:         transform, opacity;
+}
+
+
+
+
+
+
+
+
+						/****** RESPONSIVE ********/
+
+/* Responsive media queries - for TABLET */
+
+@media screen and (max-width: 980px) {
+	div.content {
+		width: auto;
+		margin: 0 10px 0 10px;
+	} 
+
+	#team blockquote {
+	font-size: 16px;
+	}
+
+	div.iphone {
+	float: none;
+	width: auto; /*you could % here if you like*/
+
+	text-align: center; /*this centralises the image as it is treated as text for alignment purposes*/
+	}
+
+
+	div.text {
+		float: none;
+		width: auto; 
+	}
+
+	#showcase {
+		height: auto;
+		background-size: cover;
+	} 
+
+	div.text img {
+		margin-bottom: 20px;
+
+	}
+}
+
+/* Responsive media queries - for 600px and less */
+
+@media screen and (max-width: 600px) {
+
+	/*all the about columns and the testimonial columns */
+
+	.col, #team .col {
+		width: 100%;
+	}
+
+	div.iphone {
+		height: auto; 
+	}
+
+	div.iphone img {
+		max-width: 100%;
+	}
+
+	div.iphone img:hover {
+		margin: 0;
+	}
+
+	header {
+		position: static; /* remove the fixed header cos that sucks for mobile */
+	}
+
+	#showcase {
+		margin: 0;
+	}
+
+	nav a {			/*male nav links fo down the page */
+		display: block;
+		padding: 0;
+		text-align: center;
+		font-size: 24px;
+		border-bottom: 1px solid #bdc3c7;
+	}
+
+	nav {
+		width: 100%;
+	}
+
+	h1 {
+		width: 150px;
+		margin: 0 auto 0 auto;
+		float: none;
+	}
+
+	
+	/*h1 { 				alternative way to restyle the h1 
+		background-position: 50% 20px;
+		width: 100%;
+		text-align: center;
+		padding: 50px 0 0 0;
+	}*/
+}
+
+
+								/****** FOOTER ********/
+
+footer {
+	width: 100%;
+}
+
+footer .col {
+	width: 33.3%;
+	overflow: inherit;
+}
+
+footer p {
+	text-align: center;
+	margin: 40px 0 40px 0;
+	color: darkgray; /* #bdc3c7 silver on flat ui */
+}
+
+footer img {
+	width: 300px;
+}
+
+footer a img {
+	text-align: center;
+	width: 100px;
+	vertical-align: top;
+}
+
+
+
